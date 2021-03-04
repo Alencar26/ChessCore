@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChessCore.Board;
+using System;
 
 namespace ChessCore
 {
@@ -6,7 +7,10 @@ namespace ChessCore
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // test class Position
+            Position P = new Position(3, 4);
+
+            Console.WriteLine($"Position: {P}");
         }
     }
 }
