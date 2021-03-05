@@ -8,6 +8,7 @@ namespace ChessCore
         static void Main(string[] args)
         {
             Board board = new Board(8,8);
+            View.PrintBoard(board);
 
             Console.WriteLine($"");
         }
