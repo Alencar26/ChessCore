@@ -31,6 +31,9 @@
 
         public void PutPiece(Piece piece, Position position)
         {
+            if (ThereIsChessPiece(position))
+                throw new BoardException("Já existe uma peça nessa posição!");
+
             Pieces[position.Line, position.Column] = piece;
             piece.Position = position;
         }
@@ -48,9 +51,7 @@
         public void ValidatePosition(Position position)
         {
             if (!ValidPosition(position))
-            {
                 throw new BoardException("Posição Inválida!");
-            }
         }
     }
 }
