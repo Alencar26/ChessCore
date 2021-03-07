@@ -8,22 +8,10 @@ namespace ChessCore
     {
         static void Main(string[] args)
         {
-            try
-            {
-                Board board = new Board(8, 8);
+            PositionChess position = new PositionChess('b',5);
 
-                board.PutPiece(new Rook(board, Color.Black), new Position(0, 0));
-                board.PutPiece(new Rook(board, Color.Black), new Position(1, 3));
-                board.PutPiece(new King(board, Color.Black), new Position(2, 4));
+            Console.WriteLine(position.ToPosition());
 
-                View.PrintBoard(board);
-
-                Console.WriteLine($"");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
             
         }
     }
