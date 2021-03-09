@@ -19,7 +19,7 @@ namespace ChessCore
                     Console.Clear();
                     View.PrintBoard(chessMatch.Board);
 
-                    Console.Write("Origem: ");
+                    Console.Write("\nOrigem: ");
                     Position origin = View.ReadPositionChess().ToPosition();
 
                     Console.Write("Destino: ");

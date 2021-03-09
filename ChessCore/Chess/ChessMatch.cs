@@ -29,7 +29,7 @@ namespace chess
 
         private void PutPiecesOnTheBoard()
         {
-            Board.PutPiece(new Rook(Board, Color.White), new PositionChess('c',1).ToPosition());
+            Board.PutPiece(new Rook(Board, Color.White), new PositionChess('c',1).ToPosition()) ;
             Board.PutPiece(new Rook(Board, Color.White), new PositionChess('e', 1).ToPosition());
             Board.PutPiece(new King(Board, Color.White), new PositionChess('d', 1).ToPosition());
             Board.PutPiece(new Rook(Board, Color.White), new PositionChess('c', 2).ToPosition());
