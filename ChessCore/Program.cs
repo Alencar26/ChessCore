@@ -10,17 +10,26 @@ namespace ChessCore
         {
             try
             {
-                Board board = new Board(8, 8);
+                ChessMatch chessMatch = new ChessMatch();
 
-                board.PutPiece(new Rook(board, Color.Black), new Position(0, 0));
-                board.PutPiece(new Rook(board, Color.White), new Position(2, 3));
-                board.PutPiece(new King(board, Color.Black), new Position(5, 1));
-                board.PutPiece(new Rook(board, Color.White), new Position(4, 4));
-                board.PutPiece(new King(board, Color.Black), new Position(4, 1));
-                board.PutPiece(new Rook(board, Color.White), new Position(2, 1));
-                board.PutPiece(new King(board, Color.Black), new Position(5, 0));
+                while (!chessMatch.GameOver)
+                {
 
-                View.PrintBoard(board);
+
+                    Console.Clear();
+                    View.PrintBoard(chessMatch.Board);
+
+                    Console.Write("Origem: ");
+                    Position origin = View.ReadPositionChess().ToPosition();
+
+                    Console.Write("Destino: ");
+                    Position destination = View.ReadPositionChess().ToPosition();
+
+                    chessMatch.PerformMovement(origin, destination);
+
+                }
+
+                
             }
             catch (BoardException e)
             {

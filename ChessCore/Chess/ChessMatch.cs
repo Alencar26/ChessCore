@@ -8,12 +8,14 @@ namespace chess
         public Board Board { get; private set; }
         private int Shift;
         private Color CurrentPlayer;
+        public bool GameOver { get; private set; }
 
         public ChessMatch()
         {
             Board = new Board(8,8);
             Shift = 1;
             CurrentPlayer = Color.White;
+            GameOver = false;
             PutPiecesOnTheBoard();
         }
 

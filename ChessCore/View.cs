@@ -1,5 +1,6 @@
 ﻿using System;
 using board;
+using chess;
 
 namespace ChessCore
 {
@@ -25,6 +26,16 @@ namespace ChessCore
                 Console.Write("\n"); 
             }
             Console.WriteLine("  a b c d e f g h");
+        }
+
+        public static PositionChess ReadPositionChess()
+        {
+            string input = Console.ReadLine();
+
+            char column = input[0];
+            int line = int.Parse(input[1].ToString());
+
+            return new PositionChess(column, line);
         }
 
         public static void PrintPiece(Piece piece)
