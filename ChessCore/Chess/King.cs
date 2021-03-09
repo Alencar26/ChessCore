@@ -21,7 +21,6 @@ namespace chess
         {
             bool[,] matrix = new bool[Board.Lines, Board.Columns];
 
-            // testando
             Position position = new Position(0, 0);
 
             //up
@@ -44,7 +43,7 @@ namespace chess
             if (Board.ValidPosition(position) && CanMove(position))
                 matrix[position.Line, position.Column] = true;
 
-            //dwon
+            //down
             position.SetValues(position.Line + 1, position.Column);
             if (Board.ValidPosition(position) && CanMove(position))
                 matrix[position.Line, position.Column] = true;
@@ -55,7 +54,7 @@ namespace chess
                 matrix[position.Line, position.Column] = true;
 
             //left
-            position.SetValues(position.Line, position.Column + 1);
+            position.SetValues(position.Line, position.Column - 1);
             if (Board.ValidPosition(position) && CanMove(position))
                 matrix[position.Line, position.Column] = true;
 
